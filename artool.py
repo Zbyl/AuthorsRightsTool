@@ -4,7 +4,7 @@ import json
 import getpass
 import argparse
 
-from pydriller import RepositoryMining
+from pydriller import Repository
 
 
 # You can hack in your options here, if you like.
@@ -38,7 +38,7 @@ if __name__ == '__main__':
 
     print(f'Using git working directory: {working_tree_dir}')
     print(f'List of {user}\'s commits since {start_date.date().isoformat()}' + (f' to {end_date.date().isoformat()}:' if end_date is not None else ':'))
-    commits = list(RepositoryMining(working_tree_dir, since=start_date, to=end_date, only_no_merge=True, only_authors=[user]).traverse_commits())
+    commits = list(Repository(working_tree_dir, since=start_date, to=end_date, only_no_merge=True, only_authors=[user]).traverse_commits())
     for idx, commit in enumerate(commits):
         print('{}: {}'.format(idx, commit.msg))
 

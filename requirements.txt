@@ -1,1 +1,1 @@
-pydriller
+pydriller~=2
