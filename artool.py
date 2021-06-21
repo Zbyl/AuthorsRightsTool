@@ -77,6 +77,6 @@ if __name__ == '__main__':
                 print(f'==================================================================================================', file=f)
                 print(f'', file=f)
 
-                for modified_file in commit.modifications: # here you have the list of modified files
+                for modified_file in commit.modified_files: # here you have the list of modified files
                     print(f'============== File: {modified_file.filename} ==============', file=f)
                     print(modified_file.diff, file=f)
